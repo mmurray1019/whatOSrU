@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operating System Detector</title>
+</head>
+<body>
+    
+    <p id="os"></p>
+
+    <script>
+        function detectOS() {
+            const userAgent = navigator.userAgent;
+            let os = "Unknown OS";
+
+            if (userAgent.indexOf("Win") !== -1) os = "Windows";
+            else if (userAgent.indexOf("Mac") !== -1) os = "MacOS";
+            else if (userAgent.indexOf("Linux") !== -1) os = "Linux";
+            else if (userAgent.indexOf("Android") !== -1) os = "Android";
+            else if (userAgent.indexOf("iOS") !== -1) os = "iOS";
+
+            document.getElementById("os").textContent = "You are using: " + os;
+        }
+
+        window.onload = detectOS;
+    </script>
+</body>
+</html>
